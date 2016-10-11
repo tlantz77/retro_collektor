@@ -24,6 +24,9 @@ Collection.create(title: "Lisa's Playstation games", user_id: 3)
 Game.create(title: "Chrono Trigger", system: "Super Nintendo", year: "1995", value: "149.99", collection_id: 3)
 Game.create(title: "Resident Evil", system: "Playstation", year: "1996", value: "30.00", collection_id: 6)
 Game.create(title: "Streets of Rage 2", system: "Genesis", year: "1993", value: "25.49", collection_id: 2)
+Game.create(title: "Super Mario Land", system: "Gameboy", year: "1989", value: "25.49", collection_id: 4)
+Game.create(title: "Final Fantasy 3", system: "Super Nintendo", year: "1994", value: "45.00", collection_id: 3)
+Game.create(title: "Shining Force", system: "Genesis", year: "1993", value: "30.00", collection_id: 2)
 
 
 
