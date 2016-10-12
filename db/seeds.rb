@@ -9,10 +9,9 @@
 User.delete_all
 Collection.delete_all
 Game.delete_all
-
-User.create(username: "Homer", password_hash: "password")
-User.create(username: "Bart", password_hash: "password")
-User.create(username: "Lisa", password_hash: "password")
+User.create(username: "Homer", password_digest: "password")
+User.create(username: "Bart", password_digest: "password")
+User.create(username: "Lisa", password_digest: "password")
 
 Collection.create(title: "Homer's SNES games", user_id: 1)
 Collection.create(title: "Homer's Genesis games", user_id: 1)
@@ -27,8 +26,3 @@ Game.create(title: "Streets of Rage 2", system: "Genesis", year: "1993", value: 
 Game.create(title: "Super Mario Land", system: "Gameboy", year: "1989", value: "25.49", collection_id: 4)
 Game.create(title: "Final Fantasy 3", system: "Super Nintendo", year: "1994", value: "45.00", collection_id: 3)
 Game.create(title: "Shining Force", system: "Genesis", year: "1993", value: "30.00", collection_id: 2)
-
-
-
-
-
