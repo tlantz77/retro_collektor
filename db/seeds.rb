@@ -9,9 +9,10 @@
 User.delete_all
 Collection.delete_all
 Game.delete_all
-User.create(username: "Homer", password_digest: "password")
-User.create(username: "Bart", password_digest: "password")
-User.create(username: "Lisa", password_digest: "password")
+
+User.create(username: "Homer", password: "homer")
+User.create(username: "Bart", password: "bart")
+User.create(username: "Lisa", password: "lisa")
 
 Collection.create(title: "Homer's SNES games", user_id: 1)
 Collection.create(title: "Homer's Genesis games", user_id: 1)
