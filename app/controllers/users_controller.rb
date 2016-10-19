@@ -16,7 +16,7 @@ class UsersController < ApplicationController
       redirect_to root_path
     else
       @errors = user.errors.full_messages
-      # render :new
+      render :new
     end
   end
 
