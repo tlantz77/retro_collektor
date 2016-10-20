@@ -1,0 +1,7 @@
+<div>
+  <h2><%= current_user.username %>'s Collections</h2>
+  <%= current_user.collections.each do |collection| %>
+    <h3><%= collection.title %></h3>
+  <% end %>
+</div>
+
