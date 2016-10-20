@@ -1,12 +1,7 @@
+<h1>Browse Users</h1>
 <div>
   <% @users.each do |user| %>
-    <h2><%= user.username %></h2>
-      <% user.collections.each do |collection| %>
-      <h3><%= collection.title %></h3>
-        <% collection.games.each do |game| %>
-        <p>   Title: <%= game.title %>   Value: <%= game.value %></p>
-        <% end %>
-      <% end %>
+    <h2><%= link_to(user.username, user_path(user)) %></h2>
       <p> ------------------------- </p>
   <% end %>
 </div>

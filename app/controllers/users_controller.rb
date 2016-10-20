@@ -3,10 +3,18 @@ class UsersController < ApplicationController
   before_filter 'authorize', :only => [:edit, :delete]
 
   def index
-    @users = User.all
+    if current_user
+      redirect_to user_path(current_user)
+    else
+      @users = User.all
+    end
   end
 
   def new
+  end
+
+  def show
+    @user = User.find(params[:id])
   end
 
   def create
