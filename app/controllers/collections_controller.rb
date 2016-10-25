@@ -12,7 +12,7 @@ class CollectionsController < ApplicationController
   end
 
   def show
-    find_collection
+    find_user_collection
   end
 
   def new
@@ -22,11 +22,11 @@ class CollectionsController < ApplicationController
   end
 
   def edit
-    find_collection
+    find_user_collection
   end
 
   def update
-    @collection = Collection.find(params[:id])
+    find_user_collection
     if @collection.update_attributes(collection_params)
       redirect_to user_collection_path
     else
@@ -36,7 +36,8 @@ class CollectionsController < ApplicationController
 
   private
 
-  def find_collection
+  def find_user_collection
+    @user = User.find(params[:user_id])
     @collection = Collection.find(params[:id])
   end
 

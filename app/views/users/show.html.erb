@@ -1,7 +1,8 @@
 <div>
-  <h2><%= current_user == @user ? "Your" : "#{@user.username}'s" %> Collections</h2>
+  <h2><%= owner? ? "Your" : "#{@user.username}'s" %> Collections</h2>
 
   <% @user.collections.each do |collection| %>
+
     <h4><%= link_to(collection.title, user_collection_path(@user, collection))%></h4>
   <% end %>
 </div>
