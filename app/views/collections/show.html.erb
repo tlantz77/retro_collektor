@@ -1,5 +1,16 @@
 <div>
   <h2><%= @collection.title %></h2>
+  <% if owner? %>
+  <p><%= link_to("Edit Title", edit_user_collection_path) %></p>
+  <% end %>
+
+  <% @collection.games.each do |game| %>
+  <h4><%= game.title %></h4>
+  <p>System: <%= game.system %></p>
+  <p>Year: <%= game.year %></p>
+  <p>Value: <%= game.value %></p>
+  <p>-------------------------</p>
+  <% end %>
 </div>
 
 

@@ -3,11 +3,7 @@ class UsersController < ApplicationController
   before_filter 'authorize', :only => [:edit, :delete]
 
   def index
-    if current_user
-      redirect_to user_path(current_user)
-    else
-      @users = User.all
-    end
+    @users = User.all
   end
 
   def new
