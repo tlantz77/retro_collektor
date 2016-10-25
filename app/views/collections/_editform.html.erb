@@ -1,0 +1,4 @@
+<%= form_for :collection, url: user_collection_path, :method => :put do |f| %>
+  <%= f.text_field :title %>
+  <%= f.submit "Submit", class: "form-button" %>
+<% end %>
