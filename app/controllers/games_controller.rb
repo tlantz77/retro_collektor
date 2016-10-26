@@ -1,14 +1,28 @@
 class GamesController < ApplicationController
 
-  before_filter 'authorize', :only => [:edit, :update, :delete]
+  before_filter 'authorize', :only => [:new, :create, :edit, :update, :delete]
 
   def index
-    find_user
   end
 
   def show
     find_user_game
   end
+
+  def new
+  end
+
+  def create
+    user = User.find(params[:user_id])
+    game = Game.new(game_params)
+    if game.save
+      redirect_to user_path(user)
+    else
+      @errors = user.errors.full_messages
+      render :new
+    end
+  end
+
 
 
   private
@@ -19,7 +33,7 @@ class GamesController < ApplicationController
   end
 
   def game_params
-    params.require(:game).permit(:title, :system, :year, :value)
+    params.require(:game).permit(:title, :system, :year, :value, :user_id)
   end
 
 end
