@@ -15,7 +15,7 @@ class GamesController < ApplicationController
   def create
     user = User.find(params[:user_id])
     game = Game.new(game_params)
-    if game.save
+    if game.save && owner?
       redirect_to user_path(user)
     else
       @errors = user.errors.full_messages
