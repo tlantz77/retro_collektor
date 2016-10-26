@@ -7,7 +7,7 @@ class CreateGames < ActiveRecord::Migration
       t.decimal :value, precision: 8, scale: 2
       t.boolean :complete, default: false
       t.boolean :unopened, default: false
-      t.integer :collection_id
+      t.integer :user_id
 
       t.timestamps null: false
     end

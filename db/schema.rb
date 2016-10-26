@@ -13,23 +13,16 @@
 
 ActiveRecord::Schema.define(version: 20161007234647) do
 
-  create_table "collections", force: :cascade do |t|
-    t.string   "title"
-    t.integer  "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
   create_table "games", force: :cascade do |t|
     t.string   "title"
     t.string   "system"
     t.integer  "year"
-    t.decimal  "value",         precision: 8, scale: 2
-    t.boolean  "complete",                              default: false
-    t.boolean  "unopened",                              default: false
-    t.integer  "collection_id"
-    t.datetime "created_at",                                            null: false
-    t.datetime "updated_at",                                            null: false
+    t.decimal  "value",      precision: 8, scale: 2
+    t.boolean  "complete",                           default: false
+    t.boolean  "unopened",                           default: false
+    t.integer  "user_id"
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
   end
 
   create_table "users", force: :cascade do |t|
