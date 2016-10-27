@@ -27,6 +27,9 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def unauthorized
+  end
+
   private
 
   def user_params

@@ -7,12 +7,13 @@ class ApplicationController < ActionController::Base
   end
   helper_method :current_user
 
-  def authorize
-    redirect_to new_session_path unless current_user
-  end
-
   def owner?
     current_user == @user
+  end
+
+  def authorize
+    @user = User.find(params[:user_id])
+    redirect_to unauthorized_path unless owner?
   end
 
   protect_from_forgery with: :exception

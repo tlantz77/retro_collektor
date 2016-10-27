@@ -13,12 +13,12 @@ class GamesController < ApplicationController
   end
 
   def create
-    user = User.find(params[:user_id])
+    @user = User.find(params[:user_id])
     game = Game.new(game_params)
     if game.save && owner?
-      redirect_to user_path(user)
+      redirect_to user_path(@user)
     else
-      @errors = user.errors.full_messages
+      @errors = @user.errors.full_messages
       render :new
     end
   end
