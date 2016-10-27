@@ -1,0 +1,12 @@
+
+<%= form_for :game, url: user_games_path do |f| %>
+
+  Title:  <%= f.text_field :title %>
+  System: <%= f.text_field :system %>
+  Year:   <%= f.number_field :year %>
+  Value:  <%= f.number_field :value %>
+
+  <%= f.hidden_field :user_id, value: current_user.id %>
+  <%= f.submit "Submit" %>
+
+<% end %>

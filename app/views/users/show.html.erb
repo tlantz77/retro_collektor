@@ -1,8 +1,10 @@
 <div>
-  <h2><%= owner? ? "Your" : "#{@user.username}'s" %> Collections</h2>
+  <h2><%= owner? ? "Your" : "#{@user.username}'s" %> Games</h2>
+  <% if owner? %>
+    <%= link_to("Add new game", new_user_game_path(@user)) %>
+    <% end %>
 
-  <% @user.collections.each do |collection| %>
-
-    <h4><%= link_to(collection.title, user_collection_path(@user, collection))%></h4>
+  <% @user.games.each do |game| %>
+    <h4><%= link_to(game.title, user_game_path(@user, game))%> (<%= game.system %>)</h4>
   <% end %>
 </div>
