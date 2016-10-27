@@ -23,7 +23,9 @@ class GamesController < ApplicationController
     end
   end
 
+  def query
 
+  end
 
   private
 
