@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   resources :sessions, only: [:new, :create, :destroy]
 
+  get '/query', to: 'games#query', as: 'query'
+
   get '/unauthorized', to: 'users#unauthorized', as: 'unauthorized'
 
   root "users#index"
