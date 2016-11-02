@@ -1,3 +1,8 @@
-<h1>HI!</h1>
-
+<% if @game_info["status"] == "error" %>
+  <h1><%= @game_info["error_message"] %></h1>
+<% else %>
+  <h1><%= @game_info["product-name"] %></h1>
+  <p>System: <%= @game_info["console-name"] %></p>
+  <p>Loose Price: <%= @game_info["loose-price"] %></p>
+<% end %>
 

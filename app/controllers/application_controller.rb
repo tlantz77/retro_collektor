@@ -1,3 +1,6 @@
+require 'http'
+require 'json'
+
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
@@ -15,11 +18,6 @@ class ApplicationController < ActionController::Base
     @user = User.find(params[:user_id])
     redirect_to unauthorized_path unless owner?
   end
-
-  def auth_token
-    "b98a18fd77634c27e96a5a697b00debc6b8fd4e6"
-  end
-  helper_method :auth_token
 
   protect_from_forgery with: :exception
 end
