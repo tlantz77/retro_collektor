@@ -1,5 +1,4 @@
 class GamesController < ApplicationController
-
   before_filter 'authorize', :only => [:new, :create, :edit, :update, :delete]
 
   def index
@@ -24,7 +23,7 @@ class GamesController < ApplicationController
   end
 
   def query
-
+    @game_info = game_info_query(params[:game][:title])
   end
 
   private
@@ -36,6 +35,12 @@ class GamesController < ApplicationController
 
   def game_params
     params.require(:game).permit(:title, :system, :year, :value, :user_id)
+  end
+
+  def game_info_query(title)
+    p_title = title.gsub(/\s/, '+')
+    auth_token = "b98a18fd77634c27e96a5a697b00debc6b8fd4e6"
+    JSON.parse(HTTP.get("http://ae.pricecharting.com/api/product?t=#{auth_token}&q=#{p_title}"))
   end
 
 end
