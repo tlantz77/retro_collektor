@@ -4,9 +4,9 @@ class CreateGames < ActiveRecord::Migration
       t.string :title
       t.string :system
       t.integer :year
+      t.integer :condition
       t.decimal :value, precision: 8, scale: 2
-      t.boolean :complete, default: false
-      t.boolean :unopened, default: false
+
       t.integer :user_id
 
       t.timestamps null: false
